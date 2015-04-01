@@ -78,7 +78,7 @@ On failure (when the service is not available), the `HTTP` return code is ``503`
 
 
 Example
-^^^^^^^
+"""""""
 
 Request:
 
@@ -108,7 +108,7 @@ The user has to supply a bitcoin destination address and amount to create the or
 
 
 Request
-^^^^^^^
+"""""""
 
 Issue a `POST` request to create a new order supplying the following parameters:
 
@@ -121,7 +121,7 @@ Issue a `POST` request to create a new order supplying the following parameters:
 
 
 Response
-^^^^^^^^
+""""""""
 
 On success (`HTTP` code ``200``), the request returns the following `JSON` data:
 
@@ -145,7 +145,7 @@ On failure, the `HTTP` return code is:
 
 
 Example
-^^^^^^^
+"""""""
 
 In this example, we create an order for donating 0.1 BTC to the Monero developers (using Bitcoin, ironically):
 
@@ -177,7 +177,7 @@ The order status endpoint allows users to query the status of an order, thereby 
 
 
 Request
-^^^^^^^
+"""""""
 
 Issue a `POST` request to query the status of a given order.
 You have to supply the order's ``uuid`` in the request:
@@ -190,7 +190,7 @@ You have to supply the order's ``uuid`` in the request:
 
 
 Response
-^^^^^^^^
+""""""""
 
 On success (`HTTP` code ``200``), the request returns the following `JSON` data:
 
@@ -235,7 +235,7 @@ On failure, the `HTTP` return code is:
 
 
 Example
-^^^^^^^
+"""""""
 
 Continuing from our previous example, we can query the order by supplying the order's unique identifier ``uuid`` as follows:
 
