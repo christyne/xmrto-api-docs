@@ -55,13 +55,13 @@ The service status endpoint supplies information about the service status and cu
 
 
 Request
-^^^^^^^
+"""""""
 
 Issue a `GET` request to query current service status.
 
 
 Response
-^^^^^^^^
+""""""""
 
 On success (`HTTP` code ``200``), the request returns the following `JSON` data:
 
