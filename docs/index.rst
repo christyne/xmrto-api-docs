@@ -63,9 +63,9 @@ Issue a `GET` request to query current service status.
 Response
 ^^^^^^^^
 
-On success (http code 200), the request returns the following `JSON` data:
+On success (`HTTP` code ``200``), the request returns the following `JSON` data:
 
-::
+.. sourcecode:: javascript
 
     {
         "lower_limit": <lower_order_limit_in_btc_as_float>, 
@@ -82,20 +82,19 @@ Example
 
 Request:
 
-::
+.. sourcecode:: bash
 
     curl https://xmr.to/api/service_status/
 
 Response:
 
-::
+.. sourcecode:: javascript
 
     {
         "price": 0.004011,
         "upper_limit": 1.0,
         "lower_limit": 0.001
     }
-
 
 
 
@@ -113,7 +112,7 @@ Request
 
 Issue a `POST` request to create a new order supplying the following parameters:
 
-::
+.. sourcecode:: javascript
 
     {        
         "btc_amount": <requested_amount_in_btc_as_float>,
@@ -126,7 +125,7 @@ Response
 
 On success (`HTTP` code ``200``), the request returns the following `JSON` data:
 
-::
+.. sourcecode:: javascript
 
     {
         "state": "TO_BE_CREATED",
@@ -150,13 +149,14 @@ Example
 
 In this example, we create an order for donating 0.1 BTC to the Monero developers (using Bitcoin, ironically):
 
-::
+.. sourcecode:: bash
 
-    curl --data '{"btc_dest_address": "1FhnVJi2V1k4MqXm2nHoEbY5LV7FPai7bb","btc_amount": 0.1}' -H "Content-Type: application/json" https://xmr.to/api/create_order/
+    curl --data '{"btc_dest_address": "1FhnVJi2V1k4MqXm2nHoEbY5LV7FPai7bb", \
+        "btc_amount": 0.1}' -H "Content-Type: application/json" https://xmr.to/api/create_order/
 
 Response:
 
-::
+.. sourcecode:: javascript
 
     {
         "state": "TO_BE_CREATED",
@@ -182,7 +182,7 @@ Request
 Issue a `POST` request to query the status of a given order.
 You have to supply the order's ``uuid`` in the request:
 
-::
+.. sourcecode:: javascript
 
     {        
         "uuid": "<unique_order_identifier_as_12_character_string>",
@@ -194,7 +194,7 @@ Response
 
 On success (`HTTP` code ``200``), the request returns the following `JSON` data:
 
-::
+.. sourcecode:: javascript
 
     {
         "state": "<order_state_as_string>",
@@ -239,13 +239,14 @@ Example
 
 Continuing from our previous example, we can query the order by supplying the order's unique identifier ``uuid`` as follows:
 
-::
+.. sourcecode:: bash
 
-    curl --data '{"uuid": "xmrto-VkT2yM"}' -H "Content-Type: application/json" https://xmr.to/api/order_status/
+    curl --data '{"uuid": "xmrto-VkT2yM"}' -H "Content-Type: application/json" \
+        https://xmr.to/api/order_status/
 
 The response gives the current status of the order:
 
-::
+.. sourcecode:: javascript
 
     {
         "xmr_price_btc": 0.003963,
