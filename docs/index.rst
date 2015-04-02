@@ -54,14 +54,13 @@ API endpoint: https://xmr.to/api/service_status/
 The service status endpoint supplies information about the service status and current parameters (price, order limits, etc).
 
 
-Request
-"""""""
+*Request*
+
 
 Issue a `GET` request to query current service status.
 
 
-Response
-""""""""
+*Response*
 
 On success (`HTTP` code ``200``), the request returns the following `JSON` data:
 
@@ -78,15 +77,15 @@ On failure (when the service is not available), the `HTTP` return code is ``503`
 
 
 Example
-"""""""
+^^^^^^^
 
-Request:
+*Request*
 
 .. sourcecode:: bash
 
     curl https://xmr.to/api/service_status/
 
-Response:
+*Response*
 
 .. sourcecode:: javascript
 
@@ -106,9 +105,7 @@ API endpoint: https://xmr.to/api/create_order/
 The order creation endpoint allows to create a new order at the current price.
 The user has to supply a bitcoin destination address and amount to create the order.
 
-
-Request
-"""""""
+*Request*
 
 Issue a `POST` request to create a new order supplying the following parameters:
 
@@ -120,8 +117,7 @@ Issue a `POST` request to create a new order supplying the following parameters:
     }
 
 
-Response
-""""""""
+*Response*
 
 On success (`HTTP` code ``200``), the request returns the following `JSON` data:
 
@@ -145,16 +141,19 @@ On failure, the `HTTP` return code is:
 
 
 Example
-"""""""
+^^^^^^^
 
-In this example, we create an order for donating 0.1 BTC to the Monero developers (using Bitcoin, ironically):
+
+In this example, we create an order for donating 0.1 BTC to the Monero developers (using Bitcoin, ironically).
+
+*Request*
 
 .. sourcecode:: bash
 
     curl --data '{"btc_dest_address": "1FhnVJi2V1k4MqXm2nHoEbY5LV7FPai7bb", \
         "btc_amount": 0.1}' -H "Content-Type: application/json" https://xmr.to/api/create_order/
 
-Response:
+*Response*
 
 .. sourcecode:: javascript
 
@@ -175,9 +174,7 @@ API endpoint: https://xmr.to/api/order_status/
 
 The order status endpoint allows users to query the status of an order, thereby obtaining payment details and order processing progress.
 
-
-Request
-"""""""
+*Request*
 
 Issue a `POST` request to query the status of a given order.
 You have to supply the order's ``uuid`` in the request:
@@ -189,8 +186,7 @@ You have to supply the order's ``uuid`` in the request:
     }
 
 
-Response
-""""""""
+*Response*
 
 On success (`HTTP` code ``200``), the request returns the following `JSON` data:
 
@@ -235,14 +231,18 @@ On failure, the `HTTP` return code is:
 
 
 Example
-"""""""
+^^^^^^^
 
-Continuing from our previous example, we can query the order by supplying the order's unique identifier ``uuid`` as follows:
+Continuing from our previous example, we can query the order by supplying the order's unique identifier ``uuid``.
+
+*Request*
 
 .. sourcecode:: bash
 
     curl --data '{"uuid": "xmrto-VkT2yM"}' -H "Content-Type: application/json" \
         https://xmr.to/api/order_status/
+
+*Response*
 
 The response gives the current status of the order:
 
@@ -271,7 +271,6 @@ In this example, the next step would require the user to pay `25.233409` XMR to 
 address `44TVPcCSHebEQp4LnapPkhb2pondb2Ed7GJJLc6TkKwtSyumUnQ6QzkCCkojZycH2MRfLcujCM7QR1gdnRULRraV4UpB5n4` 
 while providing the payment ID `223907873a29a00e3a5ff563c3b65f278ab6eb0cba623428ca3d9aaa54ea7bbb`. 
 The payment *must* be made before the order expires, in this case, inside `224` seconds.
-
 
 
 Problems?
