@@ -1,23 +1,23 @@
 
-Querying service status
-=======================
+Querying order parameters
+=========================
 
 Reference
 ---------
 
-API endpoint: https://xmr.to/api/service_status_query/
+API endpoint: https://xmr.to/api/v1/xmr2btc/order_parameter_query/
 
-The service status endpoint supplies information about whether new orders can be created.
-In this case, this endpoint provides the current parameters (price, order limits, etc) for newly created orders.
+The order parameter endpoint supplies information about whether new orders can be created.
+In this case, this endpoint provides the current price, order limits, etc for newly created orders.
 
 .. note::
-    It is possible to query the status of existing orders even if the service status
+    It is possible to query the status of existing orders even if the order parameter
     endpoint reports `not available`.
 
 Request
 ~~~~~~~
 
-Issue a `GET` request to query current service status.
+Issue a `GET` request to query current order parameters.
 
 Response
 ~~~~~~~~
@@ -53,7 +53,7 @@ Request
 
 .. sourcecode:: bash
 
-    curl https://xmr.to/api/service_status_query/
+    curl https://xmr.to/api/v1/xmr2btc/order_parameter_query/
 
 Response
 ~~~~~~~~

@@ -29,22 +29,33 @@ transaction over the given amount to the given bitcoin address.
 
 When using the API, the general flow of events is similar:
 
- - get service status to see if XMR.TO_ is available and to fetch current
-   parameters (price, order limits, etc)
+ - get current order parameters to see if XMR.TO_ is available and to fetch current
+   price, order limits, etc
  - create a new order by supplying bitcoin destination address and mount
  - check order status to get payment information
  - pay order
  - continue to repeatedly check order status for processing progress
 
 
-Conventions
------------
+Naming conventions
+------------------
+
+API base URL
+~~~~~~~~~~~~
+
+The base URL of the API is ``https://xmr.to/api/``, followed by the version identifier (currently ``v1``),
+followed by the conversion direction (currently only ``xmr2btc``). Therefore, the complete API base URL
+is ``https://xmr.to/api/v1/xmr2btc/``.
+
+.. note::
+    The current version of the API is 1.
 
 API endpoint names
 ~~~~~~~~~~~~~~~~~~
 
 API endpoints are always named ``<noun>_<verb>``. For exmple, the endpoint to create
-a new order is called ``/order_create/``.
+a new order is called ``/order_create/``. For example, for API version 1 the complete URL would be
+``https://xmr.to/api/v1/xmr2btc/order_create/``.
 
 Field names and values
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -52,6 +63,10 @@ Field names and values
 Fields are named using lower-case nouns separated by underscores. Values are given in their default format.
 For example, the field ``btc_amount`` gives the amount of an order in bitcoin rather than satoshis.
 Data types are not indicated in field names.
+
+
+Data and formats
+----------------
 
 Responses
 ~~~~~~~~~
@@ -88,6 +103,27 @@ provided a malformed bitcoin address when creating a new order:
 The error messages and `HTTP` return codes specific to the different API endpoint are defined in
 the appropriate section.
 
+
+Various parameters
+------------------
+
+Currently, XMR.TO_ has a few additional parameters and best practice values that are constant. Therefore, we do not expose them via a dedicated API endpoint. However, for the sake of completeness, we list them here:
+
++----------------------------------------------+---------+
+| Description                                  | Value   |  
++==============================================+=========+
+| Number of XMR confirmations required         | 1       |
+| before we accept an order                    |         |
++----------------------------------------------+---------+
+| Number of BTC confirmations required before  | 144     |
+| we purge an order                            |         |
++----------------------------------------------+---------+
+| Number of seconds after which an order times | 300     |
+| out if no or only partial payment occurred   |         |
++----------------------------------------------+---------+
+| Number of recommended mixins to use in       | 3       |
+| Monero_ payments                             |         |
++----------------------------------------------+---------+
 
 
 .. _XMR.TO: https://xmr.to

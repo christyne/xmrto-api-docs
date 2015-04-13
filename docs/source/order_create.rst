@@ -4,7 +4,7 @@ Creating a new order
 Reference
 ---------
 
-API endpoint: https://xmr.to/api/order_create/
+API endpoint: https://xmr.to/api/v1/xmr2btc/order_create/
 
 The order creation endpoint allows to create a new order at the current price.
 The user has to supply a bitcoin destination address and amount to create the order.
@@ -23,7 +23,7 @@ Issue a `POST` request to create a new order supplying the following parameters:
 
 .. note::
     Make sure that ``btc_amount`` amount is inside the possible limits for an order.
-    These limits can be queried using the ``service_status_query`` endpoint.
+    These limits can be queried using the ``order_parameter_query`` endpoint.
 
 
 Response
@@ -69,7 +69,7 @@ Request
 .. sourcecode:: bash
 
     curl --data '{"btc_dest_address": "1FhnVJi2V1k4MqXm2nHoEbY5LV7FPai7bb", \
-        "btc_amount": 0.1}' -H "Content-Type: application/json" https://xmr.to/api/order_create/
+        "btc_amount": 0.1}' -H "Content-Type: application/json" https://xmr.to/api/v1/xmr2btc/order_create/
 
 .. hint::
     Remember to set the `HTTP` Content-Type to ``application/json``!

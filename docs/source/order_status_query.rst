@@ -5,7 +5,7 @@ Querying order status
 Reference
 ---------
 
-API endpoint: https://xmr.to/api/order_status_query/
+API endpoint: https://xmr.to/api/v1/xmr2btc/order_status_query/
 
 The order status endpoint allows users to query the status of an order, thereby obtaining payment details and order processing progress.
 
@@ -87,7 +87,7 @@ Request
 ::
 
     curl --data '{"uuid": "xmrto-VkT2yM"}' -H "Content-Type: application/json" \
-        https://xmr.to/api/order_status_query/
+        https://xmr.to/api/v1/xmr2btc/order_status_query/
 
 Response
 ~~~~~~~~

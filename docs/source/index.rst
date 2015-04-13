@@ -16,6 +16,9 @@ anonymously using Monero_.
 
 Follow us on Twitter if you want to get updates about XMR.TO: https://twitter.com/xmr_to
 
+.. note::
+    The current version of the API is 1.
+
 Contents
 --------
 
@@ -23,9 +26,9 @@ Contents
     :maxdepth: 2
 
     introduction
-    service_status
-    create_order
-    order_status
+    order_parameter_query
+    order_create
+    order_status_query
     problems
 
 Preface
