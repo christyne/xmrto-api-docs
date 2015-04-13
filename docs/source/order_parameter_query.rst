@@ -8,7 +8,7 @@ Reference
 API endpoint: https://xmr.to/api/v1/xmr2btc/order_parameter_query/
 
 The order parameter endpoint supplies information about whether new orders can be created.
-In this case, this endpoint provides the current price, order limits, etc for newly created orders.
+In this case, this endpoint provides the current price, order limits, etc. for newly created orders.
 
 .. note::
     It is possible to query the status of existing orders even if the order parameter

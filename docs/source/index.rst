@@ -67,9 +67,9 @@ Preface
             XMR.TO_ provides an API that enables developers to use the service
             in programs, apps, scripts etc. This API therefore allows developers
             to integrate an option to pay any bitcoin address in their product,
-            for example, in a monero wallet service.
-            The API is a REST-like API using `JSON` as dataformat. It is available anonymously
-            and does not require identification or authentification.
+            for example, in a Monero wallet service.
+            The API is a REST-like API using `JSON` as data format. It is available anonymously
+            and does not require identification or authentication.
             This document describes this API and gives examples of its usage.
 
 .. meta::

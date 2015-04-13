@@ -12,9 +12,9 @@ XMR.TO_ converts moneroj (XMR) provided by the user to bitcoins
 XMR.TO_ provides an API that enables developers to use the service
 in programs, apps, scripts etc. This API therefore allows developers
 to integrate an option to pay any bitcoin address in their product,
-for example, in a monero wallet service. 
-The API is a REST-like API using `JSON` as dataformat. It is available anonymously
-and does not require identification or authentification.
+for example, in a Monero wallet service. 
+The API is a REST-like API using `JSON` as data format. It is available anonymously
+and does not require identification or authentication.
 This document describes this API and gives examples of its usage.
 
 
@@ -30,7 +30,7 @@ transaction over the given amount to the given bitcoin address.
 When using the API, the general flow of events is similar:
 
  - get current order parameters to see if XMR.TO_ is available and to fetch current
-   price, order limits, etc
+   price, order limits, etc...
  - create a new order by supplying bitcoin destination address and mount
  - check order status to get payment information
  - pay order
@@ -53,7 +53,7 @@ is ``https://xmr.to/api/v1/xmr2btc/``.
 API endpoint names
 ~~~~~~~~~~~~~~~~~~
 
-API endpoints are always named ``<noun>_<verb>``. For exmple, the endpoint to create
+API endpoints are always named ``<noun>_<verb>``. For example, the endpoint to create
 a new order is called ``/order_create/``. For example, for API version 1 the complete URL would be
 ``https://xmr.to/api/v1/xmr2btc/order_create/``.
 
@@ -61,7 +61,7 @@ Field names and values
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Fields are named using lower-case nouns separated by underscores. Values are given in their default format.
-For example, the field ``btc_amount`` gives the amount of an order in bitcoin rather than satoshis.
+For example, the field ``btc_amount`` gives the amount of an order in bitcoins rather than satoshis.
 Data types are not indicated in field names.
 
 

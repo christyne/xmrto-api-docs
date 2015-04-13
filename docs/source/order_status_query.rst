@@ -55,7 +55,7 @@ Presence of some of these fields depend on ``state``, which can take the followi
 Value                   Meaning
 ====================    =============================================================
 ``TO_BE_CREATED``       order creation pending
-``UNPAID``              waiting for monero payment by user
+``UNPAID``              waiting for Monero payment by user
 ``UNDERPAID``           order partially paid
 ``PAID_UNCONFIRMED``    order paid, waiting for confirmation
 ``PAID``                order paid and confirmed
@@ -72,7 +72,7 @@ On failure, one of the following errors is returned:
 HTTP code   XMR.TO error code       Error message/reason                Solution
 =========   ===================     ================================    ================
 ``404``     ``XMRTO-ERROR-009``     invalid request                     check request parameters
-``404``     ``XMRTO-ERROR-006``     requested order not found           check order uuid
+``404``     ``XMRTO-ERROR-006``     requested order not found           check order UUID
 =========   ===================     ================================    ================
 
 
